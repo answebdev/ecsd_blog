@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <div>
       <Helmet>
-        <title>Low Core Blog</title>
+        <title>Low Core</title>
         <style type='text/css'>{`        
         .navbar{
           display: none;

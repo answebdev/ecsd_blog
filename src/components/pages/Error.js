@@ -8,7 +8,7 @@ const Error = () => {
   return (
     <div>
       <Helmet>
-        <title>Low Core Blog | Error</title>
+        <title>Low Core | Error</title>
         <style type='text/css'>{`        
         .navbar{
           display: none;

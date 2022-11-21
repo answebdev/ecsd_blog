@@ -5,7 +5,7 @@ const Resources = () => {
   return (
     <div>
       <Helmet>
-        <title>Low Core Blog | Resources</title>
+        <title>Low Core | Resources</title>
       </Helmet>
       <h1>Resources</h1>
     </div>

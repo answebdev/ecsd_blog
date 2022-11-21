@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Low Core Blog | Home</title>
+        <title>Low Core | Home</title>
       </Helmet>
       <h1>Home</h1>
     </div>
