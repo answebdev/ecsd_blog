@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -8,10 +8,11 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { MdPlayCircle } from 'react-icons/md';
+import { MdPlayArrow } from 'react-icons/md';
+
+import BackToTop from '../misc/BackToTop';
 
 import data from '../../data';
-import BackToTop from '../layout/BackToTop';
 
 const Home = () => {
   const [students, setStudents] = useState(data);
@@ -31,13 +32,13 @@ const Home = () => {
             textAlign: 'center',
           }}
         >
-          Home
+          Current Students
         </h1>
-        <div>
+        {/* <div>
           <h2 style={{ textAlign: 'center', lineHeight: '1.6' }}>
             Welcome to the best class!
           </h2>
-        </div>
+        </div> */}
       </div>
       <div
         style={{
@@ -108,7 +109,7 @@ const Home = () => {
                       </Accordion>
                       <p>
                         <Button variant='outlined'>
-                          Listen <MdPlayCircle />
+                          Listen <MdPlayArrow />
                         </Button>
                       </p>
                     </div>

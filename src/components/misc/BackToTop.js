@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 
-// See comment section: https://dev.to/silviaespanagil/how-to-create-a-scroll-to-top-button-with-react-17do
-
 const BackToTop = () => {
   const [, setShowGoTop] = useState(false);
 
