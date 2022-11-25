@@ -10,6 +10,9 @@ const students = [
     bio: 'Homework loves you.',
     button_id: 'abduladolf',
     status: 'active',
+    // audio: './assets/audio/smurfs_theme_edit.mp3',
+    audio: './smurfs_theme_edit.mp3',
+    // audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
   },
   {
     id: 2,
@@ -22,6 +25,7 @@ const students = [
     bio: 'Likes bread, cheese, eggs (sometimes chicken) for breakfast.',
     button_id: 'amin',
     status: 'active',
+    audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
   },
   {
     id: 3,
@@ -34,6 +38,7 @@ const students = [
     bio: 'First graduate to move up to the next level.',
     button_id: '',
     status: 'graduate',
+    audio: '',
   },
   {
     id: 4,
@@ -42,10 +47,11 @@ const students = [
     dislikes: 'No after parties',
     interesting_fact: '',
     country: 'Saudi Arabia',
-    img: 'https://i1.sndcdn.com/avatars-000022201824-zd09tb-t500x500.jpg',
+    img: 'https://pngimg.com/uploads/simpsons/simpsons_PNG71.png',
     bio: "Sometimes Papa Mutaz. Sometimes sneaks in to clean Mutaz's room.",
     button_id: 'aziz',
     status: 'active',
+    audio: '',
   },
   {
     id: 5,
@@ -58,6 +64,7 @@ const students = [
     bio: 'Loves doing homework every day, but also has homework phobia.',
     button_id: 'nasser',
     status: 'active',
+    audio: '',
   },
   {
     id: 6,
@@ -70,6 +77,7 @@ const students = [
     bio: 'Wants to go on vacation. Loves taking pictures of the sunset.',
     button_id: 'jenny',
     status: 'active',
+    audio: '',
   },
   {
     id: 7,
@@ -82,6 +90,7 @@ const students = [
     bio: 'Bringer of donuts.',
     button_id: '',
     status: 'active',
+    audio: '',
   },
   {
     id: 8,
@@ -94,6 +103,7 @@ const students = [
     bio: 'Fresh new haircut and Kahoot winner.',
     button_id: '',
     status: 'active',
+    audio: '',
   },
   {
     id: 9,
@@ -106,6 +116,7 @@ const students = [
     bio: 'In charge of break time. Cleans his ears every day.',
     button_id: 'mutaz',
     status: 'graduate',
+    audio: '',
   },
   {
     id: 10,
@@ -118,6 +129,7 @@ const students = [
     bio: 'Has two cute chihuahuas and loves baseball.',
     button_id: '',
     status: 'graduate',
+    audio: '',
   },
   {
     id: 11,
@@ -130,6 +142,7 @@ const students = [
     bio: 'Comes from Taiwan and works as an accountant.',
     button_id: 'michelle',
     status: 'active',
+    audio: '',
   },
   {
     id: 12,
@@ -142,6 +155,7 @@ const students = [
     bio: 'My name is Yazeed. Waka waka waka.',
     button_id: 'yazeed',
     status: 'active',
+    audio: '',
   },
   {
     id: 13,
@@ -154,6 +168,7 @@ const students = [
     bio: 'Do you like my moustache?',
     button_id: 'bader',
     status: 'active',
+    audio: '',
   },
   {
     id: 14,
@@ -166,6 +181,7 @@ const students = [
     bio: 'Nice to meet you!',
     button_id: '',
     status: 'active',
+    audio: '',
   },
   {
     id: 15,
@@ -178,6 +194,7 @@ const students = [
     bio: 'I love Brazil!',
     button_id: 'joao',
     status: 'active',
+    audio: '',
   },
 ];
 

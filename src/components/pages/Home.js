@@ -77,24 +77,6 @@ const Home = () => {
                           </Typography>
                         </AccordionSummary>
                         <AccordionDetails sx={{ padding: '0' }}>
-                          {/* <div>
-                            <p style={{ lineHeight: '1.5' }}>
-                              <strong>Country: </strong>
-                              {student.country}
-                            </p>
-                          </div>
-                          <div>
-                            <p style={{ lineHeight: '1.5' }}>
-                              <strong>Likes: </strong>
-                              {student.likes}
-                            </p>
-                          </div>
-                          <div>
-                            <p style={{ lineHeight: '1.5' }}>
-                              <strong>Dislikes: </strong>
-                              {student.dislikes}
-                            </p>
-                          </div> */}
                           <div style={{ lineHeight: '2' }}>
                             <p style={{ width: '300px', lineHeight: '2' }}>
                               <strong>Country: </strong> {student.country}
@@ -108,7 +90,14 @@ const Home = () => {
                         </AccordionDetails>
                       </Accordion>
                       <p>
-                        <Button size='small' variant='outlined'>
+                        <Button
+                          size='small'
+                          variant='outlined'
+                          onClick={() => {
+                            let audio = new Audio(student.audio);
+                            audio.play();
+                          }}
+                        >
                           Listen <MdPlayArrow />
                         </Button>
                       </p>
