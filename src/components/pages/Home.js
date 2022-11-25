@@ -108,7 +108,7 @@ const Home = () => {
                         </AccordionDetails>
                       </Accordion>
                       <p>
-                        <Button variant='outlined'>
+                        <Button size='small' variant='outlined'>
                           Listen <MdPlayArrow />
                         </Button>
                       </p>
