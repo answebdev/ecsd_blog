@@ -7,7 +7,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 
+import BackToTop from '../misc/BackToTop';
+
 // import Typography from '@mui/material/Typography';
+
+import '../../App.css';
 
 const Blog = () => {
   const [allPostsData, setAllPosts] = useState(null);
@@ -48,20 +52,20 @@ const Blog = () => {
           Blog
         </h1>
         <div>
-          <h2 style={{ textAlign: 'center', lineHeight: '1.6' }}>
+          <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
             Samples of Student Writing
-          </h2>
+          </p>
         </div>
         <div
           style={{
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'space-evenly',
             flexWrap: 'wrap',
           }}
         >
           {allPostsData &&
             allPostsData.map((post, index) => (
-              <div key={index} style={{ margin: '40px' }}>
+              <div key={index} style={{ margin: '40px 20px' }}>
                 <Card variant='outlined'>
                   <CardContent>
                     <img
@@ -89,6 +93,15 @@ const Blog = () => {
               </div>
             ))}
         </div>
+      </div>
+
+      <div
+        style={{
+          textAlign: 'center',
+          padding: '40px 0 20px 0',
+        }}
+      >
+        <BackToTop />
       </div>
     </div>
   );

@@ -31,6 +31,7 @@ const Blog = () => {
              }
            },
          body,
+         publishedAt,
         "name": author->name,
         "authorImage": author->image
        }`,
@@ -86,6 +87,9 @@ const Blog = () => {
           projectId={sanityClient.clientConfig.projectId}
           dataset={sanityClient.clientConfig.dataset}
         />
+        <div>
+          <p>{postData.publishedAt}</p>
+        </div>
       </div>
       <div>
         <Link to='/blog'>Back</Link>
