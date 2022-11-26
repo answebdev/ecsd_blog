@@ -72,11 +72,13 @@ const Blog = () => {
             direction='row'
             spacing={2}
           >
-            <Avatar
-              alt={postData.author}
-              sx={{ width: 100, height: 100 }}
-              src={urlFor(postData.studentImage).url()}
-            />
+            {postData.studentImage && (
+              <Avatar
+                alt={postData.author}
+                sx={{ width: 100, height: 100 }}
+                src={urlFor(postData.studentImage).url()}
+              />
+            )}
           </Stack>
         </div>
       </div>
