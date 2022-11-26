@@ -20,8 +20,21 @@ export default {
     {
       name: 'author',
       title: 'Author',
-      type: 'reference',
-      to: { type: 'author' },
+      type: 'string',
+    },
+    // {
+    //   name: 'author',
+    //   title: 'Author',
+    //   type: 'reference',
+    //   to: { type: 'author' },
+    // },
+    {
+      name: 'studentImage',
+      title: 'Student Profile Picture',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'mainImage',

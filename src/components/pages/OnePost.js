@@ -23,7 +23,9 @@ const Blog = () => {
       .fetch(
         `*[slug.current == $slug]{
           title,
+          author,
           slug,
+          studentImage,
           mainImage{
             asset->{
               _id,
@@ -31,9 +33,7 @@ const Blog = () => {
              }
            },
          body,
-         publishedAt,
-        "name": author->name,
-        "authorImage": author->image
+         publishedAt
        }`,
         { slug }
       )
@@ -51,7 +51,7 @@ const Blog = () => {
     >
       <Helmet>
         <title>
-          Low Core | {postData.title}, by {postData.name}
+          Low Core | {postData.title}, by {postData.author}
         </title>
       </Helmet>
       <div style={{ padding: '2em 2em 0 2em' }}>
@@ -64,7 +64,7 @@ const Blog = () => {
         </h2>
         <div>
           <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
-            Written by {postData.name}.
+            Written by {postData.author}.
           </p>
 
           <Stack
@@ -73,9 +73,9 @@ const Blog = () => {
             spacing={2}
           >
             <Avatar
-              alt={postData.name}
+              alt={postData.author}
               sx={{ width: 100, height: 100 }}
-              src={urlFor(postData.authorImage).url()}
+              src={urlFor(postData.studentImage).url()}
             />
           </Stack>
         </div>

@@ -7,6 +7,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 
+import Spinner from '../misc/Spinner.js';
 import BackToTop from '../misc/BackToTop';
 
 // import Typography from '@mui/material/Typography';
@@ -19,7 +20,7 @@ const Blog = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "post"]{
+        `*[_type == "post"] | order(_createdAt asc){
         title,
         slug,
         mainImage{
@@ -53,9 +54,12 @@ const Blog = () => {
         </h1>
         <div>
           <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
-            Samples of Student Writing
+            Student Writing Samples
           </p>
         </div>
+
+        {!allPostsData ? <Spinner /> : null}
+
         <div
           style={{
             display: 'flex',

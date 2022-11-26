@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MdPlayArrow } from 'react-icons/md';
 
+import Spinner from '../misc/Spinner.js';
 import BackToTop from '../misc/BackToTop';
 
 // import data from '../../data';
@@ -74,6 +75,9 @@ const Home = () => {
           </p>
         </div>
       </div>
+
+      {!allStudentsData ? <Spinner /> : null}
+
       <div
         style={{
           display: 'flex',
