@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { format } from 'date-fns';
 import { useParams } from 'react-router-dom';
 import sanityClient from '../../client.js';
 import BlockContent from '@sanity/block-content-to-react';
@@ -90,7 +91,7 @@ const Blog = () => {
           dataset={sanityClient.clientConfig.dataset}
         />
         <div>
-          <p>{postData.publishedAt}</p>
+          <p>{format(new Date(postData.publishedAt), 'MMMM dd, yyyy')}</p>
         </div>
       </div>
       <div>

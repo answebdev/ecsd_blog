@@ -33,6 +33,11 @@ export default {
       title: 'Interesting Fact',
       type: 'string',
     },
+    // {
+    //   name: 'audio',
+    //   title: 'Audio File',
+    //   type: 'file',
+    // },
     {
       name: 'isActive',
       title: 'Currently in the class?',

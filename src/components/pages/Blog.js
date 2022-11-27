@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { format } from 'date-fns';
 import sanityClient from '../../client.js';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 import Spinner from '../misc/Spinner.js';
 import BackToTop from '../misc/BackToTop';
-
-// import Typography from '@mui/material/Typography';
 
 import '../../App.css';
 
@@ -20,8 +20,10 @@ const Blog = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "post"] | order(_createdAt asc){
+        `*[_type == "post"] | order(publishedAt desc){
         title,
+        author,
+        publishedAt,
         slug,
         mainImage{
           asset->{
@@ -80,7 +82,20 @@ const Blog = () => {
                     <div>
                       <div style={{ lineHeight: '2', marginTop: '20px' }}>
                         <p style={{ width: '300px', lineHeight: '1.5' }}>
-                          {post.title}
+                          <strong>{post.title}</strong>
+                          <br />
+                          {post.author}
+                          <br />
+                          <Typography
+                            sx={{ fontSize: 14 }}
+                            color='text.secondary'
+                            gutterBottom
+                          >
+                            {format(
+                              new Date(post.publishedAt),
+                              'MMMM dd, yyyy'
+                            )}
+                          </Typography>
                         </p>
                       </div>
                     </div>
