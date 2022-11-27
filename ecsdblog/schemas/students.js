@@ -34,11 +34,6 @@ export default {
       type: 'string',
     },
     {
-      name: 'audio',
-      title: 'Audio File',
-      type: 'file',
-    },
-    {
       name: 'isActive',
       title: 'Currently in the class?',
       type: 'boolean',
