@@ -22,12 +22,6 @@ export default {
       title: 'Author',
       type: 'string',
     },
-    // {
-    //   name: 'author',
-    //   title: 'Author',
-    //   type: 'reference',
-    //   to: { type: 'author' },
-    // },
     {
       name: 'studentImage',
       title: 'Student Profile Picture',

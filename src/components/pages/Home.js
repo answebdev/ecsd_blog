@@ -39,6 +39,7 @@ const Home = () => {
         likes,
         dislikes,
         interesting_fact,
+        audio,
         image,
         mainImage{
           asset->{

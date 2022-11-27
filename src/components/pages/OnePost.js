@@ -64,7 +64,7 @@ const Blog = () => {
         </h2>
         <div>
           <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
-            Written by {postData.author}.
+            Written by {postData.author}
           </p>
 
           <Stack
