@@ -12,7 +12,9 @@ import Typography from '@mui/material/Typography';
 import Spinner from '../misc/Spinner.js';
 import BackToTop from '../misc/BackToTop';
 
-import '../../App.css';
+import classes from '../../styles/Blog.module.css';
+
+// import '../../App.css';
 
 const Blog = () => {
   const [allPostsData, setAllPosts] = useState(null);
@@ -100,6 +102,7 @@ const Blog = () => {
                       </div>
                     </div>
                     <Link
+                      className={classes.ReadBtn}
                       to={'/blog/' + post.slug.current}
                       key={post.slug.current}
                     >
