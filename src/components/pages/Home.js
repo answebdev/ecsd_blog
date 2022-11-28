@@ -137,16 +137,22 @@ const Home = () => {
                           </AccordionDetails>
                         </Accordion>
                         <p>
-                          <Button
-                            size='small'
-                            variant='outlined'
-                            onClick={() => {
-                              let audio = new Audio(student.audio.asset.url);
-                              audio.play();
-                            }}
-                          >
-                            Listen <MdPlayArrow />
-                          </Button>
+                          {!student.audio ? (
+                            <Button disabled size='small' variant='outlined'>
+                              Listen <MdPlayArrow />
+                            </Button>
+                          ) : (
+                            <Button
+                              size='small'
+                              variant='outlined'
+                              onClick={() => {
+                                let audio = new Audio(student.audio.asset.url);
+                                audio.play();
+                              }}
+                            >
+                              Listen <MdPlayArrow />
+                            </Button>
+                          )}
                         </p>
                       </div>
                     </div>
