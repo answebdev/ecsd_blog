@@ -41,6 +41,7 @@ const Home = () => {
         likes,
         dislikes,
         interesting_fact,
+        isActive,
         audio{
           asset->{
           _id,
@@ -79,7 +80,8 @@ const Home = () => {
         </h1>
         <div>
           <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
-            Current students and those who have left the school at this level.
+            Current students and former students who remained in this level when
+            leaving the school.
           </p>
         </div>
       </div>
@@ -96,72 +98,193 @@ const Home = () => {
         {allStudentsData &&
           allStudentsData.map((student, index) => {
             return (
-              <div key={index} style={{ margin: '40px' }}>
-                <Card variant='outlined'>
-                  <CardContent>
-                    <img
-                      src={urlFor(student.image).url()}
-                      style={{ width: '300px', height: '300px' }}
-                      alt={student.name}
-                    />
-                    <h3 style={{ width: '300px' }}>{student.name}</h3>
-                    <div>
-                      <div style={{ lineHeight: '2', marginTop: '20px' }}>
-                        <p style={{ width: '300px', lineHeight: '1.5' }}>
-                          <strong>Bio: </strong> {student.bio}
-                        </p>
-                      </div>
-                      <div style={{ lineHeight: '1.5' }}>
-                        <Accordion sx={{ width: '300px', boxShadow: 'none' }}>
-                          <AccordionSummary
-                            sx={{ padding: '0' }}
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls='panel1a-content'
-                            id='panel1a-header'
-                          >
-                            <Typography>
-                              <strong>Details</strong>
-                            </Typography>
-                          </AccordionSummary>
-                          <AccordionDetails sx={{ padding: '0' }}>
-                            <div style={{ lineHeight: '2' }}>
-                              <p style={{ width: '300px', lineHeight: '2' }}>
-                                <strong>Country: </strong> {student.country}
-                                <br />
-                                <strong>Likes: </strong> {student.likes}
-                                <br />
-                                <strong>Dislikes: </strong>
-                                {student.dislikes}
-                              </p>
-                            </div>
-                          </AccordionDetails>
-                        </Accordion>
-                        <p>
-                          {!student.audio ? (
-                            <Button disabled size='small' variant='outlined'>
-                              Listen <MdPlayArrow />
-                            </Button>
-                          ) : (
-                            <Button
-                              size='small'
-                              variant='outlined'
-                              onClick={() => {
-                                let audio = new Audio(student.audio.asset.url);
-                                audio.play();
-                              }}
+              <div key={index}>
+                {student.isActive ? (
+                  <div style={{ margin: '40px' }}>
+                    <Card variant='outlined'>
+                      <CardContent>
+                        <img
+                          src={urlFor(student.image).url()}
+                          style={{ width: '300px', height: '300px' }}
+                          alt={student.name}
+                        />
+                        <h3 style={{ width: '300px' }}>{student.name}</h3>
+                        <div>
+                          <div style={{ lineHeight: '2', marginTop: '20px' }}>
+                            <p style={{ width: '300px', lineHeight: '1.5' }}>
+                              <strong>Bio: </strong> {student.bio}
+                            </p>
+                          </div>
+                          <div style={{ lineHeight: '1.5' }}>
+                            <Accordion
+                              sx={{ width: '300px', boxShadow: 'none' }}
                             >
-                              Listen <MdPlayArrow />
-                            </Button>
-                          )}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                              <AccordionSummary
+                                sx={{ padding: '0' }}
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls='panel1a-content'
+                                id='panel1a-header'
+                              >
+                                <Typography>
+                                  <strong>Details</strong>
+                                </Typography>
+                              </AccordionSummary>
+                              <AccordionDetails sx={{ padding: '0' }}>
+                                <div style={{ lineHeight: '2' }}>
+                                  <p
+                                    style={{ width: '300px', lineHeight: '2' }}
+                                  >
+                                    <strong>Country: </strong> {student.country}
+                                    <br />
+                                    <strong>Likes: </strong> {student.likes}
+                                    <br />
+                                    <strong>Dislikes: </strong>
+                                    {student.dislikes}
+                                  </p>
+                                </div>
+                              </AccordionDetails>
+                            </Accordion>
+                            <p>
+                              {!student.audio ? (
+                                <Button
+                                  disabled
+                                  size='small'
+                                  variant='outlined'
+                                >
+                                  Listen <MdPlayArrow />
+                                </Button>
+                              ) : (
+                                <Button
+                                  size='small'
+                                  variant='outlined'
+                                  onClick={() => {
+                                    let audio = new Audio(
+                                      student.audio.asset.url
+                                    );
+                                    audio.play();
+                                  }}
+                                >
+                                  Listen <MdPlayArrow />
+                                </Button>
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ) : null}
               </div>
             );
           })}
       </div>
+
+      <div style={{ padding: '2em 2em 0 2em' }}>
+        <h1
+          style={{
+            textAlign: 'center',
+          }}
+        >
+          Graduates
+        </h1>
+        <div>
+          <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
+            Students who have graduated and moved up to the next level.
+          </p>
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
+        {allStudentsData &&
+          allStudentsData.map((student, index) => {
+            return (
+              <div key={index}>
+                {!student.isActive ? (
+                  <div style={{ margin: '40px' }}>
+                    <Card variant='outlined'>
+                      <CardContent>
+                        <img
+                          src={urlFor(student.image).url()}
+                          style={{ width: '300px', height: '300px' }}
+                          alt={student.name}
+                        />
+                        <h3 style={{ width: '300px' }}>{student.name}</h3>
+                        <div>
+                          <div style={{ lineHeight: '2', marginTop: '20px' }}>
+                            <p style={{ width: '300px', lineHeight: '1.5' }}>
+                              <strong>Bio: </strong> {student.bio}
+                            </p>
+                          </div>
+                          <div style={{ lineHeight: '1.5' }}>
+                            <Accordion
+                              sx={{ width: '300px', boxShadow: 'none' }}
+                            >
+                              <AccordionSummary
+                                sx={{ padding: '0' }}
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls='panel1a-content'
+                                id='panel1a-header'
+                              >
+                                <Typography>
+                                  <strong>Details</strong>
+                                </Typography>
+                              </AccordionSummary>
+                              <AccordionDetails sx={{ padding: '0' }}>
+                                <div style={{ lineHeight: '2' }}>
+                                  <p
+                                    style={{ width: '300px', lineHeight: '2' }}
+                                  >
+                                    <strong>Country: </strong> {student.country}
+                                    <br />
+                                    <strong>Likes: </strong> {student.likes}
+                                    <br />
+                                    <strong>Dislikes: </strong>
+                                    {student.dislikes}
+                                  </p>
+                                </div>
+                              </AccordionDetails>
+                            </Accordion>
+                            <p>
+                              {!student.audio ? (
+                                <Button
+                                  disabled
+                                  size='small'
+                                  variant='outlined'
+                                >
+                                  Listen <MdPlayArrow />
+                                </Button>
+                              ) : (
+                                <Button
+                                  size='small'
+                                  variant='outlined'
+                                  onClick={() => {
+                                    let audio = new Audio(
+                                      student.audio.asset.url
+                                    );
+                                    audio.play();
+                                  }}
+                                >
+                                  Listen <MdPlayArrow />
+                                </Button>
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+      </div>
+
       <div
         style={{
           textAlign: 'center',

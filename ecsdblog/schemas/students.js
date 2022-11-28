@@ -40,7 +40,8 @@ export default {
     },
     {
       name: 'isActive',
-      title: 'Currently in the class?',
+      title:
+        'Currently active in the class, or remained in this level when leaving the school',
       type: 'boolean',
     },
     {
