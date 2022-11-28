@@ -19,6 +19,7 @@ import classes from '../../styles/Blog.module.css';
 const Blog = () => {
   const [allPostsData, setAllPosts] = useState(null);
 
+  // Fetch data and order by 'publishedAt' date in descending order: 'order(publishedAt desc'
   useEffect(() => {
     sanityClient
       .fetch(

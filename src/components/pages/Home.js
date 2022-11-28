@@ -25,10 +25,12 @@ function urlFor(source) {
 }
 
 const Home = () => {
-  // const [students, setStudents] = useState(data);
-
   const [allStudentsData, setAllStudents] = useState(null);
 
+  // Fetch data and order by 'createdAt' date in ascending order: 'order(_createdAt asc)'
+  // Note: Since '_createdAt' is built in to Sanity, and not something that was added to the schema,
+  // and underscore is used: '_createdAt'.
+  // If this were a value added to the, such as 'publishedAt' in 'Blog.js', no underscore is used: 'publishedAt'.
   useEffect(() => {
     sanityClient
       .fetch(
@@ -39,6 +41,12 @@ const Home = () => {
         likes,
         dislikes,
         interesting_fact,
+        audio{
+          asset->{
+          _id,
+          url
+        }
+      },
         image,
         mainImage{
           asset->{
@@ -133,7 +141,7 @@ const Home = () => {
                             size='small'
                             variant='outlined'
                             onClick={() => {
-                              let audio = new Audio(student.audio);
+                              let audio = new Audio(student.audio.asset.url);
                               audio.play();
                             }}
                           >
