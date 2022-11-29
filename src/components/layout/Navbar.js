@@ -60,21 +60,21 @@ const Navbar = (props) => {
   return (
     <div className='navbar'>
       {/* For fixed/static navbar, use this opening <Box> tag code: */}
-      {/* <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }}>
         <AppBar
           component='nav'
           position='static'
           sx={{
             backgroundColor: '#545454',
           }}
-        > */}
-      <Box sx={{ display: 'flex' }}>
+        >
+          {/* <Box sx={{ display: 'flex' }}>
         <AppBar
           component='nav'
           sx={{
             backgroundColor: '#545454',
           }}
-        >
+        > */}
           <Toolbar>
             <IconButton
               color='inherit'
