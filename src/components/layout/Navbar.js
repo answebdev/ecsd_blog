@@ -26,9 +26,7 @@ const Navbar = (props) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant='h6' sx={{ my: 2 }}>
-        <Link style={{ textDecoration: 'none', color: '#1a2027' }} to='/'>
-          LOW CORE
-        </Link>
+        LOW CORE
       </Typography>
       <Divider />
       <List style={{ textAlign: 'center' }} component='nav'>
