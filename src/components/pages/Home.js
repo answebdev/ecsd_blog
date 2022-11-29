@@ -62,11 +62,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        backgroundColor: '#f4f4f4',
-      }}
-    >
+    <div>
       <Helmet>
         <title>Low Core | Home</title>
       </Helmet>

@@ -45,11 +45,7 @@ const Blog = () => {
   if (!postData) return <div>Loading...</div>;
 
   return (
-    <div
-      style={{
-        backgroundColor: '#f4f4f4',
-      }}
-    >
+    <div>
       <Helmet>
         <title>
           Low Core | {postData.title}, by {postData.author}

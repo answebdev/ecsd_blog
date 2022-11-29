@@ -8,6 +8,9 @@ import Resources from './components/pages/Resources';
 import Error from './components/pages/Error';
 import './App.css';
 
+// Live Site: https://ecsd-blog.netlify.app/
+// Sanity Studio Deployed: https://ecsd-blog.sanity.studio/
+
 const App = () => {
   return (
     <div>
