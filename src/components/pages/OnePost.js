@@ -47,9 +47,7 @@ const Blog = () => {
   return (
     <div>
       <Helmet>
-        <title>
-          Low Core | {postData.title}, by {postData.author}
-        </title>
+        <title>Low Core | Blog | {postData.title}</title>
       </Helmet>
       <div style={{ padding: '2em 2em 0 2em' }}>
         <h2
