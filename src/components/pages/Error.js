@@ -12,7 +12,8 @@ const Error = () => {
       <Helmet>
         <title>Low Core | Error</title>
         <style type='text/css'>{`        
-        .navbar{
+        .navbar,
+        .footer {
           display: none;
         }
 

@@ -10,6 +10,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import classes from '../../styles/Navbar.module.css';
 
@@ -93,7 +94,7 @@ const Navbar = (props) => {
               </Link>
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              <Link className={classes.Link} to='/home' color='inherit'>
+              {/* <Link className={classes.Link} to='/home' color='inherit'>
                 Home
               </Link>
               <Link className={classes.Link} to='/blog' color='inherit'>
@@ -101,7 +102,34 @@ const Navbar = (props) => {
               </Link>
               <Link className={classes.Link} to='/resources' color='inherit'>
                 Resources
-              </Link>
+              </Link> */}
+              <Button color='inherit'>
+                <Link
+                  style={{ textDecoration: 'none', color: '#ffffff' }}
+                  to='/home'
+                  color='inherit'
+                >
+                  Home
+                </Link>
+              </Button>
+              <Button color='inherit'>
+                <Link
+                  style={{ textDecoration: 'none', color: '#ffffff' }}
+                  to='/blog'
+                  color='inherit'
+                >
+                  Blog
+                </Link>
+              </Button>
+              <Button color='inherit'>
+                <Link
+                  style={{ textDecoration: 'none', color: '#ffffff' }}
+                  to='/resources'
+                  color='inherit'
+                >
+                  Resources
+                </Link>
+              </Button>
             </Box>
           </Toolbar>
         </AppBar>

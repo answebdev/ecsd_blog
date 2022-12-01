@@ -43,7 +43,8 @@ const Landing = () => {
       <Helmet>
         <title>Low Core</title>
         <style type='text/css'>{`        
-        .navbar{
+        .navbar,
+        .footer {
           display: none;
         }
 

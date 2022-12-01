@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 import Landing from './components/pages/Landing';
 import Home from './components/pages/Home';
 import Blog from './components/pages/Blog';
@@ -23,6 +24,7 @@ const App = () => {
         <Route exact path='/blog/:slug' element={<OnePost />} />
         <Route path='*' element={<Error />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
