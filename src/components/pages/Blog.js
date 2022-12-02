@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import Spinner from '../misc/Spinner.js';
+import ScrollUpButton from 'react-scroll-up-button';
 import BackToTop from '../misc/BackToTop';
 
 import classes from '../../styles/Blog.module.css';
@@ -114,14 +115,23 @@ const Blog = () => {
         </div>
       </div>
 
-      <div
+      {/* <div
         style={{
           textAlign: 'center',
           padding: '40px 0 20px 0',
         }}
       >
         <BackToTop />
-      </div>
+      </div> */}
+      <ScrollUpButton
+        style={{
+          marginBottom: '40px',
+          marginRight: '-15px',
+          background: '#545454',
+          borderRadius: '5px',
+        }}
+        ShowAtPosition={500}
+      />
     </div>
   );
 };

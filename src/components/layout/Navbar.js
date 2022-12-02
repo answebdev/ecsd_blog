@@ -65,6 +65,7 @@ const Navbar = (props) => {
           position='static'
           sx={{
             backgroundColor: '#545454',
+            boxShadow: 'none',
           }}
         >
           {/* <Box sx={{ display: 'flex' }}>
