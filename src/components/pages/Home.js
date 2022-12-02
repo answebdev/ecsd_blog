@@ -15,7 +15,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MdPlayArrow } from 'react-icons/md';
 
 import Spinner from '../misc/Spinner.js';
-import ScrollUpButton from 'react-scroll-up-button';
+// import ScrollUpButton from 'react-scroll-up-button';
 import BackToTop from '../misc/BackToTop';
 
 // import data from '../../data';
@@ -290,7 +290,7 @@ const Home = () => {
       >
         <BackToTop />
       </div> */}
-      <ScrollUpButton
+      {/* <ScrollUpButton
         style={{
           marginBottom: '40px',
           marginRight: '-15px',
@@ -298,7 +298,7 @@ const Home = () => {
           borderRadius: '5px',
         }}
         ShowAtPosition={500}
-      />
+      /> */}
     </div>
   );
 };
