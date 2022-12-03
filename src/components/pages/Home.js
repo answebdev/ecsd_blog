@@ -15,8 +15,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MdPlayArrow } from 'react-icons/md';
 
 import Spinner from '../misc/Spinner.js';
-// import ScrollUpButton from 'react-scroll-up-button';
-import BackToTop from '../misc/BackToTop';
+import ScrollUpButton from 'react-scroll-up-button';
+// import BackToTop from '../misc/BackToTop';
 
 // import data from '../../data';
 
@@ -282,15 +282,15 @@ const Home = () => {
           })}
       </div>
 
-      <div
+      {/* <div
         style={{
           textAlign: 'center',
           padding: '40px 0 20px 0',
         }}
       >
         <BackToTop />
-      </div>
-      {/* <ScrollUpButton
+      </div> */}
+      <ScrollUpButton
         style={{
           marginBottom: '40px',
           marginRight: '-15px',
@@ -298,7 +298,7 @@ const Home = () => {
           borderRadius: '5px',
         }}
         ShowAtPosition={500}
-      /> */}
+      />
     </div>
   );
 };

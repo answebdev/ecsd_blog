@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 
 import Spinner from '../misc/Spinner.js';
 import ScrollUpButton from 'react-scroll-up-button';
-import BackToTop from '../misc/BackToTop';
+// import BackToTop from '../misc/BackToTop';
 
 import classes from '../../styles/Blog.module.css';
 
