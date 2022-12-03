@@ -282,14 +282,14 @@ const Home = () => {
           })}
       </div>
 
-      {/* <div
+      <div
         style={{
           textAlign: 'center',
           padding: '40px 0 20px 0',
         }}
       >
         <BackToTop />
-      </div> */}
+      </div>
       {/* <ScrollUpButton
         style={{
           marginBottom: '40px',
