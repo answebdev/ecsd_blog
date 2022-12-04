@@ -84,7 +84,7 @@ const Blog = () => {
           </h1>
         </div>
       </div>
-      <div style={{ padding: '2em 6em 0 6em' }}>
+      <div style={{ padding: '2em 4em 0 4em' }}>
         <h2
           style={{
             textAlign: 'center',
@@ -113,7 +113,7 @@ const Blog = () => {
         </div>
       </div>
 
-      <div style={{ padding: '6em' }}>
+      <div style={{ padding: '4em' }}>
         <Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
           {format(new Date(postData.publishedAt), 'MMMM dd, yyyy')}
         </Typography>
