@@ -9,6 +9,7 @@ import imageUrlBuilder from '@sanity/image-url';
 
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -42,14 +43,48 @@ const Blog = () => {
       .catch(console.error);
   }, [slug]);
 
-  if (!postData) return <div>Loading...</div>;
+  // if (!postData) return <div>Loading...</div>;
+  if (!postData) return <div></div>;
 
   return (
     <div>
       <Helmet>
         <title>Low Core | Blog | {postData.title}</title>
       </Helmet>
-      <div style={{ padding: '2em 2em 0 2em' }}>
+      <div
+        style={{
+          marginTop: '-70px',
+          zIndex: '-10',
+          position: 'relative',
+          height: '500px',
+          objectFit: 'contain',
+          overFlow: 'hidden',
+          backgroundImage: `linear-gradient( 0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${urlFor(
+            postData.mainImage
+          ).url()})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+        className='hero-image'
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%,-50%)',
+          }}
+          className='container'
+        >
+          <h1 style={{ fontsize: '72px', color: '#ffffff' }}>
+            <span style={{ padding: '6px 14px', display: 'inline-block' }}>
+              {postData.title}
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div style={{ padding: '2em 6em 0 6em' }}>
         <h2
           style={{
             textAlign: 'center',
@@ -58,8 +93,8 @@ const Blog = () => {
           {postData.title}
         </h2>
         <div>
-          <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
-            Written by {postData.author}
+          <p style={{ textAlign: 'center', lineHeight: '2' }}>
+            By {postData.author}
           </p>
 
           <Stack
@@ -77,19 +112,22 @@ const Blog = () => {
           </Stack>
         </div>
       </div>
-      <img src={urlFor(postData.mainImage).width(200).url()} alt='' />
-      <div>
-        <BlockContent
-          blocks={postData.body}
-          projectId={sanityClient.clientConfig.projectId}
-          dataset={sanityClient.clientConfig.dataset}
-        />
-        <div>
-          <p>{format(new Date(postData.publishedAt), 'MMMM dd, yyyy')}</p>
+
+      <div style={{ padding: '6em' }}>
+        <Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
+          {format(new Date(postData.publishedAt), 'MMMM dd, yyyy')}
+        </Typography>
+        <div style={{ fontSize: '20px', lineHeight: '1.6' }}>
+          <BlockContent
+            blocks={postData.body}
+            projectId={sanityClient.clientConfig.projectId}
+            dataset={sanityClient.clientConfig.dataset}
+          />
         </div>
-      </div>
-      <div>
-        <Link to='/blog'>Back</Link>
+
+        <div>
+          <Link to='/blog'>Back</Link>
+        </div>
       </div>
     </div>
   );
