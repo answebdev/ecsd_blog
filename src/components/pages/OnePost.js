@@ -11,6 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+import Spinner from '../misc/Spinner.js';
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
@@ -43,8 +45,7 @@ const Blog = () => {
       .catch(console.error);
   }, [slug]);
 
-  // if (!postData) return <div>Loading...</div>;
-  if (!postData) return <div></div>;
+  if (!postData) return <Spinner />;
 
   return (
     <div>
