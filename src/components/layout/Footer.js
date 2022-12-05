@@ -4,7 +4,7 @@ const Footer = () => (
   <div className='footer'>
     <div className={classes.Footer}>
       <span className={classes.FooterText}>
-        &copy; Copyright {new Date().getFullYear()} Low Core
+        &copy; Copyright {new Date().getFullYear()} Adolf Schmuck
       </span>
     </div>
   </div>

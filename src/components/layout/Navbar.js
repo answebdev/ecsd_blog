@@ -85,6 +85,32 @@ const Navbar = (props) => {
             >
               <MenuIcon />
             </IconButton>
+
+            {/* Visible Brand with Hamburger Icon */}
+            <Typography
+              sx={{
+                flexGrow: '1',
+                textAlign: 'center',
+                mr: 2,
+                display: {
+                  sm: 'none',
+                  md: 'none',
+                  lg: 'none',
+                  xl: 'none',
+                },
+                fontFamily: 'Roboto',
+                fontWeight: '500',
+                fontSize: '1.25rem',
+                lineHeight: '1.6',
+              }}
+            >
+              <Link className={classes.TitleLink} to='/'>
+                LOW CORE
+              </Link>
+            </Typography>
+
+            {/* End Visible Brand with Hamburger Icon */}
+
             <Typography
               variant='h6'
               component='div'
