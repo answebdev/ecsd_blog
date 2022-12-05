@@ -66,6 +66,11 @@ const Home = () => {
     <div>
       <Helmet>
         <title>Low Core | Home</title>
+        <style type='text/css'>{`        
+        body {
+          overflow-x:hidden
+        }
+      `}</style>
       </Helmet>
       <div style={{ padding: '2em 2em 0 2em' }}>
         <h1
