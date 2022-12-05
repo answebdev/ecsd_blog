@@ -68,7 +68,7 @@ const Home = () => {
         <title>Low Core | Home</title>
         <style type='text/css'>{`        
         body {
-          overflow-x:hidden
+          overflow-x:hidden;
         }
       `}</style>
       </Helmet>
