@@ -103,7 +103,8 @@ const Home = () => {
             return (
               <div key={index}>
                 {student.isActive ? (
-                  <div style={{ margin: '40px' }}>
+                  // <div style={{ margin: '40px' }}>
+                  <div style={{ margin: '40px 30px' }}>
                     <Card variant='outlined'>
                       <CardContent>
                         <img
@@ -209,7 +210,8 @@ const Home = () => {
             return (
               <div key={index}>
                 {!student.isActive ? (
-                  <div style={{ margin: '40px' }}>
+                  // <div style={{ margin: '40px' }}>
+                  <div style={{ margin: '40px 30px' }}>
                     <Card variant='outlined'>
                       <CardContent>
                         <img
