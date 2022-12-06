@@ -95,7 +95,7 @@ const Blog = () => {
       </div>
 
       <div className={classes.MainTextContainer}>
-        <Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
+        <Typography sx={{ fontSize: 18 }} color='text.secondary' gutterBottom>
           {format(new Date(postData.publishedAt), 'MMMM dd, yyyy')}
         </Typography>
 
@@ -107,8 +107,10 @@ const Blog = () => {
           />
         </div>
 
+        <br />
+
         <div>
-          <Link style={{ textDecoration: 'none' }} to='/blog'>
+          <Link className={classes.BackToBlogBtn} to='/blog'>
             Back to Blog
           </Link>
         </div>
