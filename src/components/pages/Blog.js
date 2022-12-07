@@ -3,19 +3,14 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { format } from 'date-fns';
 import sanityClient from '../../client.js';
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
 import Spinner from '../misc/Spinner.js';
 import ScrollUpButton from 'react-scroll-up-button';
-// import BackToTop from '../misc/BackToTop';
-
 import classes from '../../styles/Blog.module.css';
-
-// import '../../App.css';
+// import BackToTop from '../misc/BackToTop';
 
 const Blog = () => {
   const [allPostsData, setAllPosts] = useState(null);
@@ -46,42 +41,28 @@ const Blog = () => {
       <Helmet>
         <title>Low Core | Blog</title>
       </Helmet>
-      <div style={{ padding: '2em 2em 0 2em' }}>
-        <h1
-          style={{
-            textAlign: 'center',
-          }}
-        >
-          Blog
-        </h1>
+      <div className={classes.MainContainer}>
+        <h1 className={classes.Header}>Blog</h1>
         <div>
-          <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
-            Student Writing Samples
-          </p>
+          <p className={classes.SubHeader}>Student Writing Samples</p>
         </div>
 
         {!allPostsData ? <Spinner /> : null}
 
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-evenly',
-            flexWrap: 'wrap',
-          }}
-        >
+        <div className={classes.MainDiv}>
           {allPostsData &&
             allPostsData.map((post, index) => (
-              <div key={index} style={{ margin: '40px 20px' }}>
+              <div className={classes.CardDiv} key={index}>
                 <Card variant='outlined'>
                   <CardContent>
                     <img
-                      style={{ width: '300px', height: '300px' }}
+                      className={classes.CardImage}
                       src={post.mainImage.asset.url}
                       alt={post.title}
                     />
                     <div>
-                      <div style={{ lineHeight: '2', marginTop: '20px' }}>
-                        <p style={{ width: '300px', lineHeight: '1.5' }}>
+                      <div className={classes.CardTextDiv}>
+                        <p className={classes.CardText}>
                           <strong>{post.title}</strong>
                           <br />
                           {post.author}
@@ -100,7 +81,7 @@ const Blog = () => {
                       </div>
                     </div>
                     <Link
-                      className={classes.ReadBtn}
+                      className={classes.ReadBtnLink}
                       to={'/blog/' + post.slug.current}
                       key={post.slug.current}
                     >
@@ -115,14 +96,6 @@ const Blog = () => {
         </div>
       </div>
 
-      {/* <div
-        style={{
-          textAlign: 'center',
-          padding: '40px 0 20px 0',
-        }}
-      >
-        <BackToTop />
-      </div> */}
       <ScrollUpButton
         style={{
           marginBottom: '40px',

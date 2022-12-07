@@ -1,0 +1,20 @@
+.MainContainer {
+  padding: 2em 2em 0 2em;
+}
+
+.Header {
+  text-align: center;
+}
+
+.SubHeader {
+  text-align: center;
+  line-height: 1.6;
+}
+
+.MainDiv {
+  margin: 60px 40px;
+}
+
+.Link {
+  text-decoration: none;
+}

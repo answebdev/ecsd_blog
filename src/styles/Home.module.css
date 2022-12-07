@@ -1,8 +1,8 @@
-.MainContainer {
+.HeaderContainer {
   padding: 2em 2em 0 2em;
 }
 
-.Header {
+.MainHeader {
   text-align: center;
 }
 
@@ -11,14 +11,14 @@
   line-height: 1.6;
 }
 
-.MainDiv {
+.MainContainer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .CardDiv {
-  margin: 40px 20px;
+  margin: 40px 30px;
 }
 
 .CardImage {
@@ -26,16 +26,29 @@
   height: 300px;
 }
 
-.CardTextDiv {
+.CardHeader {
+  width: 300px;
+}
+
+.BioDiv {
   margin-top: 20px;
   line-height: 2;
 }
 
-.CardText {
+.BioText {
   width: 300px;
   line-height: 1.5;
 }
 
-.ReadBtnLink {
-  text-decoration: none;
+.AccordionDiv {
+  line-height: 1.5;
+}
+
+.AccordionDetailsDiv {
+  line-height: 2;
+}
+
+.AccordionDetailsText {
+  width: 300px;
+  line-height: 2;
 }

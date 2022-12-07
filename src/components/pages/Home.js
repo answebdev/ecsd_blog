@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-
 import sanityClient from '../../client.js';
 import imageUrlBuilder from '@sanity/image-url';
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
@@ -13,12 +11,10 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MdPlayArrow } from 'react-icons/md';
-
 import Spinner from '../misc/Spinner.js';
 import ScrollUpButton from 'react-scroll-up-button';
+import classes from '../../styles/Home.module.css';
 // import BackToTop from '../misc/BackToTop';
-
-// import data from '../../data';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -73,16 +69,10 @@ const Home = () => {
         }
       `}</style>
       </Helmet>
-      <div style={{ padding: '2em 2em 0 2em' }}>
-        <h1
-          style={{
-            textAlign: 'center',
-          }}
-        >
-          Current Students
-        </h1>
+      <div className={classes.HeaderContainer}>
+        <h1 className={classes.MainHeader}>Current Students</h1>
         <div>
-          <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
+          <p className={classes.SubHeader}>
             Current students and former students who remained in this level when
             leaving the school.
           </p>
@@ -91,35 +81,29 @@ const Home = () => {
 
       {!allStudentsData ? <Spinner /> : null}
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-        }}
-      >
+      <div className={classes.MainContainer}>
         {allStudentsData &&
           allStudentsData.map((student, index) => {
             return (
               <div key={index}>
                 {student.isActive ? (
                   // <div style={{ margin: '40px' }}>
-                  <div style={{ margin: '40px 30px' }}>
+                  <div className={classes.CardDiv}>
                     <Card variant='outlined'>
                       <CardContent>
                         <img
+                          className={classes.CardImage}
                           src={urlFor(student.image).url()}
-                          style={{ width: '300px', height: '300px' }}
                           alt={student.name}
                         />
-                        <h3 style={{ width: '300px' }}>{student.name}</h3>
+                        <h3 className={classes.CardHeader}>{student.name}</h3>
                         <div>
-                          <div style={{ lineHeight: '2', marginTop: '20px' }}>
-                            <p style={{ width: '300px', lineHeight: '1.5' }}>
+                          <div className={classes.BioDiv}>
+                            <p className={classes.BioText}>
                               <strong>Bio: </strong> {student.bio}
                             </p>
                           </div>
-                          <div style={{ lineHeight: '1.5' }}>
+                          <div className={classes.AccordionDiv}>
                             <Accordion
                               sx={{ width: '300px', boxShadow: 'none' }}
                             >
@@ -134,10 +118,8 @@ const Home = () => {
                                 </Typography>
                               </AccordionSummary>
                               <AccordionDetails sx={{ padding: '0' }}>
-                                <div style={{ lineHeight: '2' }}>
-                                  <p
-                                    style={{ width: '300px', lineHeight: '2' }}
-                                  >
+                                <div className={classes.AccordionDetailsDiv}>
+                                  <p className={classes.AccordionDetailsText}>
                                     <strong>Country: </strong> {student.country}
                                     <br />
                                     <strong>Likes: </strong> {student.likes}
@@ -183,50 +165,38 @@ const Home = () => {
           })}
       </div>
 
-      <div style={{ padding: '2em 2em 0 2em' }}>
-        <h1
-          style={{
-            textAlign: 'center',
-          }}
-        >
-          Graduates
-        </h1>
+      <div className={classes.HeaderContainer}>
+        <h1 className={classes.MainHeader}>Graduates</h1>
         <div>
-          <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
+          <p className={classes.SubHeader}>
             Students who have graduated and moved up to the next level.
           </p>
         </div>
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-        }}
-      >
+      <div className={classes.MainContainer}>
         {allStudentsData &&
           allStudentsData.map((student, index) => {
             return (
               <div key={index}>
                 {!student.isActive ? (
                   // <div style={{ margin: '40px' }}>
-                  <div style={{ margin: '40px 30px' }}>
+                  <div className={classes.CardDiv}>
                     <Card variant='outlined'>
                       <CardContent>
                         <img
+                          className={classes.CardImage}
                           src={urlFor(student.image).url()}
-                          style={{ width: '300px', height: '300px' }}
                           alt={student.name}
                         />
-                        <h3 style={{ width: '300px' }}>{student.name}</h3>
+                        <h3 className={classes.CardHeader}>{student.name}</h3>
                         <div>
-                          <div style={{ lineHeight: '2', marginTop: '20px' }}>
-                            <p style={{ width: '300px', lineHeight: '1.5' }}>
+                          <div className={classes.BioDiv}>
+                            <p className={classes.BioText}>
                               <strong>Bio: </strong> {student.bio}
                             </p>
                           </div>
-                          <div style={{ lineHeight: '1.5' }}>
+                          <div className={classes.AccordionDiv}>
                             <Accordion
                               sx={{ width: '300px', boxShadow: 'none' }}
                             >
@@ -241,10 +211,8 @@ const Home = () => {
                                 </Typography>
                               </AccordionSummary>
                               <AccordionDetails sx={{ padding: '0' }}>
-                                <div style={{ lineHeight: '2' }}>
-                                  <p
-                                    style={{ width: '300px', lineHeight: '2' }}
-                                  >
+                                <div className={classes.AccordionDetailsDiv}>
+                                  <p className={classes.AccordionDetailsText}>
                                     <strong>Country: </strong> {student.country}
                                     <br />
                                     <strong>Likes: </strong> {student.likes}
@@ -290,14 +258,6 @@ const Home = () => {
           })}
       </div>
 
-      {/* <div
-        style={{
-          textAlign: 'center',
-          padding: '40px 0 20px 0',
-        }}
-      >
-        <BackToTop />
-      </div> */}
       <ScrollUpButton
         style={{
           marginBottom: '40px',

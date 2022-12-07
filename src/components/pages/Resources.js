@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import classes from '../../styles/Resources.module.css';
 
 const Demo = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
@@ -33,25 +34,13 @@ const Resources = () => {
       <Helmet>
         <title>Low Core | Resources</title>
       </Helmet>
-      <div style={{ padding: '2em 2em 0 2em' }}>
-        <h1
-          style={{
-            textAlign: 'center',
-          }}
-        >
-          Resources
-        </h1>
+      <div className={classes.MainContainer}>
+        <h1 className={classes.Header}>Resources</h1>
         <div>
-          <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
-            Useful Online Resources
-          </p>
+          <p className={classes.SubHeader}>Useful Online Resources</p>
         </div>
 
-        <div
-          style={{
-            margin: '60px 40px',
-          }}
-        >
+        <div className={classes.MainDiv}>
           {allResouces &&
             allResouces.map((resource, index) => {
               return (
@@ -68,7 +57,7 @@ const Resources = () => {
                           <ListItem>
                             <ListItemText secondary={resource.description}>
                               <a
-                                style={{ textDecoration: 'none' }}
+                                className={classes.Link}
                                 href={resource.url}
                                 rel='noopener noreferrer'
                                 target='_blank'
