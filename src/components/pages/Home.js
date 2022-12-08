@@ -262,7 +262,8 @@ const Home = () => {
         style={{
           marginBottom: '40px',
           marginRight: '-15px',
-          background: '#545454',
+          // background: '#545454',
+          background: `var(--primaryDark)`,
           borderRadius: '5px',
         }}
         ShowAtPosition={500}

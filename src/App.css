@@ -1,3 +1,13 @@
+/* GLOBAL VARIABLES */
+
+:root {
+  --primaryDark: steelblue;
+  /* --secondaryDark: #834d2a; */
+  --alpha: 0.4;
+  /* --primaryFontFamily: 'Karla', sans-serif; */
+  /* --mainTextColor: #111111; */
+}
+
 /* Styles for Sticky (But Not Fixed) Footer */
 *,
 *:before,

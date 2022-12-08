@@ -35,12 +35,13 @@
 }
 
 .enter-btn {
-  background-color: #545454 !important;
+  /* background-color: #545454 !important; */
+  background-color: var(--primaryDark) !important;
 }
 
-.enter-btn:hover {
+/* .enter-btn:hover {
   background-color: #545454 !important;
-}
+} */
 
 .enter-link {
   text-decoration: none;
