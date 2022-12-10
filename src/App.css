@@ -1,10 +1,9 @@
 /* GLOBAL VARIABLES */
 
 :root {
-  /* --primaryDark: #545454; */
   --primaryColor: #ff7900;
-  --secondaryColor: #551a8b;
-  /* --secondaryDark: #834d2a; */
+  /* --secondaryColor: #551a8b; */
+  --secondaryColor: #1976d2;
   --headerFont: 'Roboto', sans-serif;
   --paragraphFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
