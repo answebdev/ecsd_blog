@@ -94,7 +94,7 @@ const Blog = () => {
                       key={post.slug.current}
                     >
                       <Button
-                        // className={classes.ReadBtn}
+                        className={classes.ReadBtn}
                         size='small'
                         variant='outlined'
                       >
@@ -113,7 +113,7 @@ const Blog = () => {
           marginBottom: '40px',
           marginRight: '-15px',
           // background: '#545454',
-          background: `var(--primaryDark)`,
+          background: `var(--primaryColor)`,
           borderRadius: '5px',
         }}
         ShowAtPosition={500}

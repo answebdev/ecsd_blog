@@ -51,12 +51,16 @@
   text-decoration: none;
 }
 
-/* .ReadBtn {
-  color: #333366;
-  border-color: #333366;
+.ReadBtn {
+  color: #551a8b !important;
+  border-color: #551a8b !important;
+  /* color: #333366;
+  border-color: #333366; */
 }
 
 .ReadBtn:hover {
-  color: #333366;
-  border-color: #333366;
-} */
+  color: #551a8b;
+  border-color: #551a8b;
+  /* color: #333366;
+  border-color: #333366; */
+}

@@ -58,3 +58,13 @@
   line-height: 2;
   color: var(--textColor);
 }
+
+.ListenBtn {
+  color: #551a8b !important;
+  border-color: #551a8b !important;
+}
+
+.ListenBtn:hover {
+  color: #551a8b;
+  border-color: #551a8b;
+}

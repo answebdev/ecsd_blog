@@ -65,7 +65,7 @@ const Navbar = (props) => {
           position='static'
           sx={{
             // backgroundColor: '#545454',
-            backgroundColor: `var(--primaryDark)`,
+            backgroundColor: `var(--primaryColor)`,
             boxShadow: 'none',
           }}
         >

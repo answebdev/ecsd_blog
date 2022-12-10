@@ -39,7 +39,7 @@
 
 .enter-btn {
   /* background-color: #545454 !important; */
-  background-color: var(--primaryDark) !important;
+  background-color: var(--primaryColor) !important;
 }
 
 /* .enter-btn:hover {

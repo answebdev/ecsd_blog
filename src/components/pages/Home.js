@@ -150,6 +150,7 @@ const Home = () => {
                                 </Button>
                               ) : (
                                 <Button
+                                  className={classes.ListenBtn}
                                   size='small'
                                   variant='outlined'
                                   onClick={() => {
@@ -253,6 +254,7 @@ const Home = () => {
                                 </Button>
                               ) : (
                                 <Button
+                                  className={classes.ListenBtn}
                                   size='small'
                                   variant='outlined'
                                   onClick={() => {
@@ -282,7 +284,7 @@ const Home = () => {
           marginBottom: '40px',
           marginRight: '-15px',
           // background: '#545454',
-          background: `var(--primaryDark)`,
+          background: `var(--primaryColor)`,
           borderRadius: '5px',
         }}
         ShowAtPosition={500}

@@ -58,4 +58,9 @@
 .BackToBlogBtn {
   text-decoration: none;
   font-size: 18px;
+  color: #551a8b;
+}
+
+.BackToBlogBtn:hover {
+  color: var(--primaryColor);
 }
