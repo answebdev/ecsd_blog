@@ -70,7 +70,7 @@ const Home = () => {
       `}</style>
       </Helmet>
       <div className={classes.HeaderContainer}>
-        <h1 className={classes.MainHeader}>Current Students</h1>
+        <h1 className={classes.MainHeader}>Class Roster</h1>
         <div>
           <p className={classes.SubHeader}>
             Current students and former students who remained in this level when
