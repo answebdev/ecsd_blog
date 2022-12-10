@@ -4,11 +4,16 @@
 
 .Header {
   text-align: center;
+  font-family: var(--headerFont);
+  letter-spacing: 0.5px;
+  color: var(--textColor);
 }
 
 .SubHeader {
   text-align: center;
   line-height: 1.6;
+  /* font-size: 18px; */
+  color: var(--textColor);
 }
 
 .MainDiv {
@@ -29,7 +34,13 @@
 .CardTextDiv {
   margin-top: 20px;
   line-height: 2;
+  color: var(--textColor);
 }
+
+/* .CardHeader {
+  font-family: var(--headerFont);
+  letter-spacing: 0.5px;
+} */
 
 .CardText {
   width: 300px;

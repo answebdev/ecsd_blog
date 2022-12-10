@@ -25,9 +25,10 @@ const Error = () => {
       <div className={classes.App}>
         <header className={classes.AppHeader}>
           <img src={robot} className={classes.AppLogo} alt='logo' />
-          <p>
+          {/* <p>
             <code>Oops! Page Not Found.</code>
-          </p>
+          </p> */}
+          <p className={classes.ErrorMsg}>Oops! Page Not Found.</p>
           <Link className={classes.AppLink} to='/home'>
             Home
           </Link>

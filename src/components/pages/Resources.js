@@ -55,7 +55,15 @@ const Resources = () => {
                       <Demo>
                         <List>
                           <ListItem>
-                            <ListItemText secondary={resource.description}>
+                            <ListItemText
+                              secondaryTypographyProps={{
+                                fontFamily: `var(--paragraphFont)`,
+                                // fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                                // 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                                // sans-serif;`,
+                              }}
+                              secondary={resource.description}
+                            >
                               <a
                                 className={classes.Link}
                                 href={resource.url}

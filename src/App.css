@@ -1,11 +1,15 @@
 /* GLOBAL VARIABLES */
 
 :root {
-  --primaryDark: steelblue;
+  /* --primaryDark: #545454; */
+  --primaryDark: #ff7900;
   /* --secondaryDark: #834d2a; */
+  --headerFont: 'Roboto', sans-serif;
+  --paragraphFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --textColor: #1a2027;
   --alpha: 0.4;
-  /* --primaryFontFamily: 'Karla', sans-serif; */
-  /* --mainTextColor: #111111; */
 }
 
 /* Styles for Sticky (But Not Fixed) Footer */
@@ -22,7 +26,20 @@ html {
 /* End Styles for Sticky Footer */
 
 body {
+  /* font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.5px;
+  color: #1a2027; */
+  font-family: var(--paragraphFont);
+  color: var(--textColor);
+  /* font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.5px;
+  color: #1a2027; */
+  /* color: yellow; */
+
   background-color: #f4f4f4;
+
+  /* LinkedIn Color: */
+  /* background-color: #f3f2ef; */
   /* Need for footer: */
   position: relative;
   margin: 0;

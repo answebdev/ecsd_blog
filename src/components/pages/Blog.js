@@ -63,12 +63,20 @@ const Blog = () => {
                     <div>
                       <div className={classes.CardTextDiv}>
                         <p className={classes.CardText}>
-                          <strong>{post.title}</strong>
+                          <span className={classes.CardHeader}>
+                            <strong>{post.title}</strong>
+                          </span>
                           <br />
                           {post.author}
                           <br />
                           <Typography
-                            sx={{ fontSize: 14 }}
+                            sx={{
+                              fontSize: 14,
+                              fontFamily: `var(--paragraphFont)`,
+                              //   fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                              // 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                              // sans-serif;`,
+                            }}
                             color='text.secondary'
                             gutterBottom
                           >

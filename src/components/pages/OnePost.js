@@ -95,7 +95,11 @@ const Blog = () => {
       </div>
 
       <div className={classes.MainTextContainer}>
-        <Typography sx={{ fontSize: 18 }} color='text.secondary' gutterBottom>
+        <Typography
+          sx={{ fontSize: 18, fontFamily: `var(--paragraphFont)` }}
+          color='text.secondary'
+          gutterBottom
+        >
           {format(new Date(postData.publishedAt), 'MMMM dd, yyyy')}
         </Typography>
 

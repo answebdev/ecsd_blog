@@ -105,7 +105,11 @@ const Home = () => {
                           </div>
                           <div className={classes.AccordionDiv}>
                             <Accordion
-                              sx={{ width: '300px', boxShadow: 'none' }}
+                              sx={{
+                                width: '300px',
+                                boxShadow: 'none',
+                                color: '#1a2027',
+                              }}
                             >
                               <AccordionSummary
                                 sx={{ padding: '0' }}
@@ -113,7 +117,12 @@ const Home = () => {
                                 aria-controls='panel1a-content'
                                 id='panel1a-header'
                               >
-                                <Typography>
+                                <Typography
+                                  sx={{
+                                    fontFamily: `var(--paragraphFont)`,
+                                    color: `var(--textColor)`,
+                                  }}
+                                >
                                   <strong>Details</strong>
                                 </Typography>
                               </AccordionSummary>
@@ -190,6 +199,7 @@ const Home = () => {
                           alt={student.name}
                         />
                         <h3 className={classes.CardHeader}>{student.name}</h3>
+
                         <div>
                           <div className={classes.BioDiv}>
                             <p className={classes.BioText}>
@@ -198,7 +208,11 @@ const Home = () => {
                           </div>
                           <div className={classes.AccordionDiv}>
                             <Accordion
-                              sx={{ width: '300px', boxShadow: 'none' }}
+                              sx={{
+                                width: '300px',
+                                boxShadow: 'none',
+                                color: '#1a2027',
+                              }}
                             >
                               <AccordionSummary
                                 sx={{ padding: '0' }}
@@ -206,7 +220,12 @@ const Home = () => {
                                 aria-controls='panel1a-content'
                                 id='panel1a-header'
                               >
-                                <Typography>
+                                <Typography
+                                  sx={{
+                                    fontFamily: `var(--paragraphFont)`,
+                                    color: `var(--textColor)`,
+                                  }}
+                                >
                                   <strong>Details</strong>
                                 </Typography>
                               </AccordionSummary>

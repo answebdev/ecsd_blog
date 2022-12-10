@@ -20,15 +20,18 @@
 }
 
 #sub-header {
+  /* font-family: var(--paragraphFont); */
+  font-family: var(--headerFont);
   font-size: 25px;
-  letter-spacing: 1px !important;
+  letter-spacing: 1.5px !important;
   color: #ffffff;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
 #landing-header h1 {
-  letter-spacing: 1px !important;
+  font-family: var(--headerFont);
+  letter-spacing: 1.5px !important;
   color: #ffffff;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);

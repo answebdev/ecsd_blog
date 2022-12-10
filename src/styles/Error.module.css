@@ -9,6 +9,7 @@
 
 .AppHeader {
   background-color: #232526;
+  /* background-color: #ff7900; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,9 +19,17 @@
   color: white;
 }
 
+.ErrorMsg {
+  font-family: var(--paragraphFont);
+  letter-spacing: 0.5px;
+}
+
 .AppLink {
-  color: #61dafb;
+  /* color: #61dafb; */
+  color: #4fc3f7;
   text-decoration: none;
+  font-family: var(--headerFont);
+  letter-spacing: 0.5px;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
