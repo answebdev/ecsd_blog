@@ -52,15 +52,15 @@
 }
 
 .ReadBtn {
-  color: #551a8b !important;
-  border-color: #551a8b !important;
+  color: var(--secondaryColor) !important;
+  border-color: var(--secondaryColor) !important;
   /* color: #333366;
   border-color: #333366; */
 }
 
 .ReadBtn:hover {
-  color: #551a8b;
-  border-color: #551a8b;
+  color: var(--secondaryColor);
+  border-color: var(--secondaryColor);
   /* color: #333366;
   border-color: #333366; */
 }

@@ -21,4 +21,9 @@
 
 .Link {
   text-decoration: none;
+  color: var(--secondaryColor);
+}
+
+.Link:active {
+  color: var(--primaryColor);
 }

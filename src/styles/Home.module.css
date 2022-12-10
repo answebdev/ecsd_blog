@@ -60,11 +60,11 @@
 }
 
 .ListenBtn {
-  color: #551a8b !important;
-  border-color: #551a8b !important;
+  color: var(--secondaryColor) !important;
+  border-color: var(--secondaryColor) !important;
 }
 
 .ListenBtn:hover {
-  color: #551a8b;
-  border-color: #551a8b;
+  color: var(--secondaryColor);
+  border-color: var(--secondaryColor);
 }
