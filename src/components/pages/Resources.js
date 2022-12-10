@@ -56,12 +56,9 @@ const Resources = () => {
                         <List>
                           <ListItem>
                             <ListItemText
-                              secondaryTypographyProps={{
-                                fontFamily: `var(--paragraphFont)`,
-                                // fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-                                // 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-                                // sans-serif;`,
-                              }}
+                              // secondaryTypographyProps={{
+                              //   fontFamily: `var(--paragraphFont)`,
+                              // }}
                               secondary={resource.description}
                             >
                               <a

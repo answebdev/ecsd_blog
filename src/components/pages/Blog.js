@@ -93,7 +93,11 @@ const Blog = () => {
                       to={'/blog/' + post.slug.current}
                       key={post.slug.current}
                     >
-                      <Button size='small' variant='outlined'>
+                      <Button
+                        // className={classes.ReadBtn}
+                        size='small'
+                        variant='outlined'
+                      >
                         Read
                       </Button>
                     </Link>
