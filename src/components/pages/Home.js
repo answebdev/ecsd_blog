@@ -10,11 +10,10 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { MdPlayArrow } from 'react-icons/md';
+import IconSpeakerLoud from '../misc/IconSpeakerLoud';
 import Spinner from '../misc/Spinner.js';
 import ScrollUpButton from 'react-scroll-up-button';
 import classes from '../../styles/Home.module.css';
-// import BackToTop from '../misc/BackToTop';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -33,11 +32,11 @@ const Home = () => {
       .fetch(
         `*[_type == "student"] | order(_createdAt asc){
         name,
-        bio,
         country,
         likes,
         dislikes,
         interesting_fact,
+        future_plans,
         isActive,
         audio{
           asset->{
@@ -90,18 +89,25 @@ const Home = () => {
                   // <div style={{ margin: '40px' }}>
                   <div className={classes.CardDiv}>
                     <Card variant='outlined'>
-                      <CardContent>
+                      <CardContent className={classes.CardContentDiv}>
                         <img
                           className={classes.CardImage}
                           src={urlFor(student.image).url()}
                           alt={student.name}
                         />
-                        <h3 className={classes.CardHeader}>{student.name}</h3>
-                        <div>
-                          <div className={classes.BioDiv}>
-                            <p className={classes.BioText}>
-                              <strong>Bio: </strong> {student.bio}
-                            </p>
+                        <div style={{ lineHeight: '0' }}>
+                          <h3 className={classes.CardHeader}>{student.name}</h3>
+                          <div style={{ paddingTop: '0' }}>
+                            <Typography
+                              sx={{
+                                fontSize: 14,
+                                fontFamily: `var(--paragraphFont)`,
+                              }}
+                              color='text.secondary'
+                              gutterBottom
+                            >
+                              {student.country}
+                            </Typography>
                           </div>
                           <div className={classes.AccordionDiv}>
                             <Accordion
@@ -123,18 +129,22 @@ const Home = () => {
                                     color: `var(--textColor)`,
                                   }}
                                 >
-                                  <strong>Details</strong>
+                                  <span className={classes.BioSpan}>Bio</span>
                                 </Typography>
                               </AccordionSummary>
                               <AccordionDetails sx={{ padding: '0' }}>
                                 <div className={classes.AccordionDetailsDiv}>
                                   <p className={classes.AccordionDetailsText}>
-                                    <strong>Country: </strong> {student.country}
-                                    <br />
                                     <strong>Likes: </strong> {student.likes}
                                     <br />
                                     <strong>Dislikes: </strong>
                                     {student.dislikes}
+                                    <br />
+                                    <strong>Interesting Fact: </strong>
+                                    {student.interesting_fact}
+                                    <br />
+                                    <strong>Future Plans: </strong>
+                                    {student.future_plans}
                                   </p>
                                 </div>
                               </AccordionDetails>
@@ -146,7 +156,8 @@ const Home = () => {
                                   size='small'
                                   variant='outlined'
                                 >
-                                  Listen <MdPlayArrow />
+                                  Listen&nbsp;
+                                  <IconSpeakerLoud />
                                 </Button>
                               ) : (
                                 <Button
@@ -160,7 +171,8 @@ const Home = () => {
                                     audio.play();
                                   }}
                                 >
-                                  Listen <MdPlayArrow />
+                                  Listen&nbsp;
+                                  <IconSpeakerLoud />
                                 </Button>
                               )}
                             </p>
@@ -193,19 +205,26 @@ const Home = () => {
                   // <div style={{ margin: '40px' }}>
                   <div className={classes.CardDiv}>
                     <Card variant='outlined'>
-                      <CardContent>
+                      <CardContent className={classes.CardContentDiv}>
                         <img
                           className={classes.CardImage}
                           src={urlFor(student.image).url()}
                           alt={student.name}
                         />
-                        <h3 className={classes.CardHeader}>{student.name}</h3>
 
-                        <div>
-                          <div className={classes.BioDiv}>
-                            <p className={classes.BioText}>
-                              <strong>Bio: </strong> {student.bio}
-                            </p>
+                        <div style={{ lineHeight: '0' }}>
+                          <h3 className={classes.CardHeader}>{student.name}</h3>
+                          <div style={{ paddingTop: '0' }}>
+                            <Typography
+                              sx={{
+                                fontSize: 14,
+                                fontFamily: `var(--paragraphFont)`,
+                              }}
+                              color='text.secondary'
+                              gutterBottom
+                            >
+                              {student.country}
+                            </Typography>
                           </div>
                           <div className={classes.AccordionDiv}>
                             <Accordion
@@ -227,18 +246,22 @@ const Home = () => {
                                     color: `var(--textColor)`,
                                   }}
                                 >
-                                  <strong>Details</strong>
+                                  <span className={classes.BioSpan}>Bio</span>
                                 </Typography>
                               </AccordionSummary>
                               <AccordionDetails sx={{ padding: '0' }}>
                                 <div className={classes.AccordionDetailsDiv}>
                                   <p className={classes.AccordionDetailsText}>
-                                    <strong>Country: </strong> {student.country}
-                                    <br />
                                     <strong>Likes: </strong> {student.likes}
                                     <br />
                                     <strong>Dislikes: </strong>
                                     {student.dislikes}
+                                    <br />
+                                    <strong>Interesting Fact: </strong>
+                                    {student.interesting_fact}
+                                    <br />
+                                    <strong>Future Plans: </strong>
+                                    {student.future_plans}
                                   </p>
                                 </div>
                               </AccordionDetails>
@@ -250,7 +273,8 @@ const Home = () => {
                                   size='small'
                                   variant='outlined'
                                 >
-                                  Listen <MdPlayArrow />
+                                  Listen&nbsp;
+                                  <IconSpeakerLoud />
                                 </Button>
                               ) : (
                                 <Button
@@ -264,7 +288,8 @@ const Home = () => {
                                     audio.play();
                                   }}
                                 >
-                                  Listen <MdPlayArrow />
+                                  Listen&nbsp;
+                                  <IconSpeakerLoud />
                                 </Button>
                               )}
                             </p>

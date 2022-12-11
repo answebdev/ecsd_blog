@@ -37,10 +37,9 @@
   color: var(--textColor);
 }
 
-/* .CardHeader {
+.CardHeader {
   font-family: var(--headerFont);
-  letter-spacing: 0.5px;
-} */
+}
 
 .CardText {
   width: 300px;

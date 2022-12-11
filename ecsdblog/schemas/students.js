@@ -9,11 +9,6 @@ export default {
       type: 'string',
     },
     {
-      name: 'bio',
-      title: 'Bio',
-      type: 'string',
-    },
-    {
       name: 'country',
       title: 'Country',
       type: 'string',
@@ -31,6 +26,11 @@ export default {
     {
       name: 'interesting_fact',
       title: 'Interesting Fact',
+      type: 'string',
+    },
+    {
+      name: 'future_plans',
+      title: 'Future Plans',
       type: 'string',
     },
     {

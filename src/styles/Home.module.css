@@ -11,7 +11,6 @@
 .SubHeader {
   text-align: center;
   line-height: 1.6;
-  /* font-size: 18px; */
 }
 
 .MainContainer {
@@ -24,25 +23,25 @@
   margin: 40px 30px;
 }
 
+.CardContentDiv {
+  padding-bottom: 8px !important;
+}
+
 .CardImage {
   width: 300px;
   height: 300px;
 }
 
 .CardHeader {
+  padding-top: 15px;
   width: 300px;
   color: var(--textColor);
+  font-family: var(--headerFont);
 }
 
-.BioDiv {
-  margin-top: 20px;
-  line-height: 2;
-}
-
-.BioText {
-  width: 300px;
-  line-height: 1.5;
-  color: var(--textColor);
+.BioSpan {
+  font-family: var(--headerFont);
+  font-weight: 700;
 }
 
 .AccordionDiv {
