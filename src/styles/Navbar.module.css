@@ -14,6 +14,22 @@
   padding: 6px 8px;
 } */
 
+.NavLink {
+  font-family: var(--headerFont);
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 25px;
+  letter-spacing: 0.02857em;
+}
+
+.NavLinkText:hover {
+  border-top: 2px solid white;
+  padding-top: 4px;
+}
+
 .PanelList {
   text-align: center;
 }

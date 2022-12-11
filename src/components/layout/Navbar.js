@@ -110,33 +110,42 @@ const Navbar = (props) => {
               </Link>
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              <Button color='inherit'>
-                <Link
-                  style={{ textDecoration: 'none', color: '#ffffff' }}
-                  to='/home'
-                  color='inherit'
-                >
-                  Home
-                </Link>
-              </Button>
-              <Button color='inherit'>
-                <Link
-                  style={{ textDecoration: 'none', color: '#ffffff' }}
-                  to='/blog'
-                  color='inherit'
-                >
-                  Blog
-                </Link>
-              </Button>
-              <Button color='inherit'>
-                <Link
-                  style={{ textDecoration: 'none', color: '#ffffff' }}
-                  to='/resources'
-                  color='inherit'
-                >
-                  Resources
-                </Link>
-              </Button>
+              {/* <Button color='inherit'> */}
+              <Link
+                className={classes.NavLink}
+                style={{
+                  padding: '6px 13px',
+                }}
+                to='/home'
+                color='inherit'
+              >
+                <span className={classes.NavLinkText}>Home</span>
+              </Link>
+              {/* </Button> */}
+              {/* <Button color='inherit'> */}
+              <Link
+                className={classes.NavLink}
+                style={{
+                  padding: '6px 13px',
+                }}
+                to='/blog'
+                color='inherit'
+              >
+                <span className={classes.NavLinkText}>Blog</span>
+              </Link>
+              {/* </Button> */}
+              {/* <Button color='inherit'> */}
+              <Link
+                className={classes.NavLink}
+                style={{
+                  padding: '6px 8px',
+                }}
+                to='/resources'
+                color='inherit'
+              >
+                <span className={classes.NavLinkText}>Resources</span>
+              </Link>
+              {/* </Button> */}
             </Box>
           </Toolbar>
         </AppBar>
