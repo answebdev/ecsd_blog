@@ -110,42 +110,29 @@ const Navbar = (props) => {
               </Link>
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              {/* <Button color='inherit'> */}
               <Link
-                className={classes.NavLink}
-                style={{
-                  padding: '6px 13px',
-                }}
+                className={`${classes.NavLink} ${classes.Home}`}
                 to='/home'
                 color='inherit'
               >
                 <span className={classes.NavLinkText}>Home</span>
               </Link>
-              {/* </Button> */}
-              {/* <Button color='inherit'> */}
+
               <Link
-                className={classes.NavLink}
-                style={{
-                  padding: '6px 13px',
-                }}
+                className={`${classes.NavLink} ${classes.Blog}`}
                 to='/blog'
                 color='inherit'
               >
                 <span className={classes.NavLinkText}>Blog</span>
               </Link>
-              {/* </Button> */}
-              {/* <Button color='inherit'> */}
+
               <Link
-                className={classes.NavLink}
-                style={{
-                  padding: '6px 8px',
-                }}
+                className={`${classes.NavLink} ${classes.Resources}`}
                 to='/resources'
                 color='inherit'
               >
                 <span className={classes.NavLinkText}>Resources</span>
               </Link>
-              {/* </Button> */}
             </Box>
           </Toolbar>
         </AppBar>

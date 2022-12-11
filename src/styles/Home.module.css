@@ -67,15 +67,3 @@
   color: var(--secondaryColor);
   border-color: var(--secondaryColor);
 }
-
-/* MEDIA QUERIES */
-/* @media screen and (max-width: 1245px) {
-  .MainContainer {
-    background-color: lightblue;
-    justify-content: space-evenly;
-  }
-
-  .CardDiv {
-    margin: 40px 20px;
-  }
-} */
