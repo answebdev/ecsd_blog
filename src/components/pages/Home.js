@@ -184,14 +184,24 @@ const Home = () => {
           })}
       </div>
 
-      <div className={classes.HeaderContainer}>
-        <h1 className={classes.MainHeader}>Graduates</h1>
-        <div>
-          <p className={classes.SubHeader}>
-            Students who have graduated and moved up to the next level.
-          </p>
-        </div>
-      </div>
+      {allStudentsData &&
+        allStudentsData.map((student, index) => {
+          return (
+            <div key={index}>
+              {student.isActive ? null : (
+                <div className={classes.HeaderContainer}>
+                  <h1 className={classes.MainHeader}>Graduates</h1>
+                  <div>
+                    <p className={classes.SubHeader}>
+                      Students who have graduated and moved up to the next
+                      level.
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
 
       <div className={classes.MainContainer}>
         {allStudentsData &&
