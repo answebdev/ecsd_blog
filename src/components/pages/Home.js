@@ -23,10 +23,7 @@ function urlFor(source) {
 const Home = () => {
   const [allStudentsData, setAllStudents] = useState(null);
 
-  // Fetch data and order by 'createdAt' date in ascending order: 'order(_createdAt asc)'
-  // Note: Since '_createdAt' is built in to Sanity, and not something that was added to the schema,
-  // and underscore is used: '_createdAt'.
-  // If this were a value added to the, such as 'publishedAt' in 'Blog.js', no underscore is used: 'publishedAt'.
+  // Fetch data and order by 'createdAt' date in ascending order
   useEffect(() => {
     sanityClient
       .fetch(

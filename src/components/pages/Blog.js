@@ -10,12 +10,11 @@ import Typography from '@mui/material/Typography';
 import Spinner from '../misc/Spinner.js';
 import ScrollUpButton from 'react-scroll-up-button';
 import classes from '../../styles/Blog.module.css';
-// import BackToTop from '../misc/BackToTop';
 
 const Blog = () => {
   const [allPostsData, setAllPosts] = useState(null);
 
-  // Fetch data and order by 'publishedAt' date in descending order: 'order(publishedAt desc'
+  // Fetch data and order by 'publishedAt' date in descending order
   useEffect(() => {
     sanityClient
       .fetch(

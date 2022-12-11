@@ -4,7 +4,7 @@
   letter-spacing: 0.02857em;
 }
 
-.Link {
+/* .Link {
   color: #ffffff;
   text-decoration: none;
   font-size: 0.875rem;
@@ -12,19 +12,13 @@
   letter-spacing: 0.02857em;
   text-transform: uppercase;
   padding: 6px 8px;
+} */
+
+.PanelList {
+  text-align: center;
 }
 
-/* https://0to255.com/ */
-.Link:hover {
-  padding: 6px 8px;
-  /* background-color: inherit !important; */
-  /* background-color: #4c4c4c; */
-  /* background-color: rgba(0, 0, 0, 0.04); */
-  /* background-color: rgba(var(--primaryColor), var(--alpha)); */
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  border-color: currentColor;
-  border-radius: 4px;
+.PanelLink {
+  text-decoration: none;
+  color: #1a2027;
 }

@@ -30,21 +30,18 @@ const Navbar = (props) => {
         LOW CORE
       </Typography>
       <Divider />
-      <List style={{ textAlign: 'center' }} component='nav'>
-        <Link style={{ textDecoration: 'none', color: '#1a2027' }} to='/home'>
+      <List className={classes.PanelList} component='nav'>
+        <Link className={classes.PanelLink} to='/home'>
           <ListItemButton sx={{ textAlign: 'center' }}>
             <ListItemText primary='Home' />
           </ListItemButton>
         </Link>
-        <Link style={{ textDecoration: 'none', color: '#1a2027' }} to='/blog'>
+        <Link className={classes.PanelLink} to='/blog'>
           <ListItemButton sx={{ textAlign: 'center' }}>
             <ListItemText primary='Blog' />
           </ListItemButton>
         </Link>
-        <Link
-          style={{ textDecoration: 'none', color: '#1a2027' }}
-          to='/resources'
-        >
+        <Link className={classes.PanelLink} to='/resources'>
           <ListItemButton sx={{ textAlign: 'center' }}>
             <ListItemText primary='Resources' />
           </ListItemButton>
@@ -64,18 +61,10 @@ const Navbar = (props) => {
           component='nav'
           position='static'
           sx={{
-            // backgroundColor: '#545454',
             backgroundColor: `var(--primaryColor)`,
             boxShadow: 'none',
           }}
         >
-          {/* <Box sx={{ display: 'flex' }}>
-        <AppBar
-          component='nav'
-          sx={{
-            backgroundColor: '#545454',
-          }}
-        > */}
           <Toolbar>
             <IconButton
               color='inherit'
@@ -99,7 +88,6 @@ const Navbar = (props) => {
                   lg: 'none',
                   xl: 'none',
                 },
-                // fontFamily: 'Roboto',
                 fontFamily: `'Roboto', sans-serif`,
                 fontWeight: '500',
                 fontSize: '1.25rem',
@@ -110,7 +98,6 @@ const Navbar = (props) => {
                 LOW CORE
               </Link>
             </Typography>
-
             {/* End Visible Brand with Hamburger Icon */}
 
             <Typography
@@ -123,15 +110,6 @@ const Navbar = (props) => {
               </Link>
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              {/* <Link className={classes.Link} to='/home' color='inherit'>
-                Home
-              </Link>
-              <Link className={classes.Link} to='/blog' color='inherit'>
-                Blog
-              </Link>
-              <Link className={classes.Link} to='/resources' color='inherit'>
-                Resources
-              </Link> */}
               <Button color='inherit'>
                 <Link
                   style={{ textDecoration: 'none', color: '#ffffff' }}
