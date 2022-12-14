@@ -54,6 +54,11 @@ const Home = () => {
       .catch(console.error);
   }, []);
 
+  // const first = allStudentsData;
+  // console.log(first);
+
+  console.log(allStudentsData);
+
   return (
     <div>
       <Helmet>
@@ -184,17 +189,35 @@ const Home = () => {
           })}
       </div>
 
-      <div className={classes.HeaderContainer}>
+      {/* <div className={classes.HeaderContainer}>
         <h1 className={classes.MainHeader}>Graduates</h1>
         <div>
           <p className={classes.SubHeader}>
             Students who have graduated and moved up to the next level.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* {allStudentsData &&
-        allStudentsData.map((student, index) => {
+        allStudentsData.slice(0, 1).map((student) => {
+          if (!student.isActive !== undefined) {
+            return (
+              <div className={classes.HeaderContainer}>
+                <h1 className={classes.MainHeader}>Graduates</h1>
+                <div>
+                  <p className={classes.SubHeader}>
+                    Students who have graduated and moved up to the next level.
+                  </p>
+                </div>
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })} */}
+
+      {/* {allStudentsData &&
+        allStudentsData.slice(0, 1).map((student, index) => {
           return (
             <div key={index}>
               {!student.isActive ? (
@@ -210,6 +233,51 @@ const Home = () => {
               ) : null}
             </div>
           );
+        })} */}
+
+      {/* Render header if there are students with 'isActive' value of 'null' (i.e., they are not active and have graduated).
+      If there are 0 students with 'isActive' value of 'null', do not show header; as soon as there is at least one student with 'isActive' value of 'null',
+      show the header.
+      The optional chaining (?.) operator below short-circuits if the reference is nullish (null or undefined):
+      https://bobbyhadz.com/blog/react-get-first-element-of-array */}
+
+      {allStudentsData &&
+        allStudentsData
+          .slice(allStudentsData.length - 1)
+          .map((student, index) => {
+            return (
+              <div key={index}>
+                {student?.isActive === null ? (
+                  <div className={classes.HeaderContainer}>
+                    <h1 className={classes.MainHeader}>Graduates</h1>
+                    <div>
+                      <p className={classes.SubHeader}>
+                        Students who have graduated and moved up to the next
+                        level.
+                      </p>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+
+      {/* {allStudentsData &&
+        allStudentsData.filter(function (student) {
+          if (student === true) {
+            return (
+              <div className={classes.HeaderContainer}>
+                <h1 className={classes.MainHeader}>Graduates</h1>
+                <div>
+                  <p className={classes.SubHeader}>
+                    Students who have graduated and moved up to the next level.
+                  </p>
+                </div>
+              </div>
+            );
+          } else {
+            return null;
+          }
         })} */}
 
       <div className={classes.MainContainer}>
