@@ -187,52 +187,6 @@ const Home = () => {
           })}
       </div>
 
-      {/* <div className={classes.HeaderContainer}>
-        <h1 className={classes.MainHeader}>Graduates</h1>
-        <div>
-          <p className={classes.SubHeader}>
-            Students who have graduated and moved up to the next level.
-          </p>
-        </div>
-      </div> */}
-
-      {/* {allStudentsData &&
-        allStudentsData.slice(0, 1).map((student) => {
-          if (!student.isActive !== undefined) {
-            return (
-              <div className={classes.HeaderContainer}>
-                <h1 className={classes.MainHeader}>Graduates</h1>
-                <div>
-                  <p className={classes.SubHeader}>
-                    Students who have graduated and moved up to the next level.
-                  </p>
-                </div>
-              </div>
-            );
-          } else {
-            return null;
-          }
-        })} */}
-
-      {/* {allStudentsData &&
-        allStudentsData.slice(0, 1).map((student, index) => {
-          return (
-            <div key={index}>
-              {!student.isActive ? (
-                <div className={classes.HeaderContainer}>
-                  <h1 className={classes.MainHeader}>Graduates</h1>
-                  <div>
-                    <p className={classes.SubHeader}>
-                      Students who have graduated and moved up to the next
-                      level.
-                    </p>
-                  </div>
-                </div>
-              ) : null}
-            </div>
-          );
-        })} */}
-
       {/* Render header if there are students with 'isActive' value of 'null' (i.e., they are not active and have graduated).
       If there are 0 students with 'isActive' value of 'null', do not show header; as soon as there is at least one student with 'isActive' value of 'null',
       show the header.
@@ -260,24 +214,6 @@ const Home = () => {
               </div>
             );
           })}
-
-      {/* {allStudentsData &&
-        allStudentsData.filter(function (student) {
-          if (student === true) {
-            return (
-              <div className={classes.HeaderContainer}>
-                <h1 className={classes.MainHeader}>Graduates</h1>
-                <div>
-                  <p className={classes.SubHeader}>
-                    Students who have graduated and moved up to the next level.
-                  </p>
-                </div>
-              </div>
-            );
-          } else {
-            return null;
-          }
-        })} */}
 
       <div className={classes.MainContainer}>
         {allStudentsData &&
@@ -391,7 +327,6 @@ const Home = () => {
         style={{
           marginBottom: '40px',
           marginRight: '-15px',
-          // background: '#545454',
           background: `var(--primaryColor)`,
           borderRadius: '5px',
         }}
