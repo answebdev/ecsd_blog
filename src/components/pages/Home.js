@@ -15,6 +15,8 @@ import Spinner from '../misc/Spinner.js';
 import ScrollUpButton from 'react-scroll-up-button';
 import classes from '../../styles/Home.module.css';
 
+// import nothing from '../../assets/img/no_students.webp';
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
@@ -54,11 +56,6 @@ const Home = () => {
       .catch(console.error);
   }, []);
 
-  // const first = allStudentsData;
-  // console.log(first);
-
-  console.log(allStudentsData);
-
   return (
     <div>
       <Helmet>
@@ -70,6 +67,7 @@ const Home = () => {
         }
       `}</style>
       </Helmet>
+
       <div className={classes.HeaderContainer}>
         <h1 className={classes.MainHeader}>Class Roster</h1>
         <div>
@@ -238,6 +236,7 @@ const Home = () => {
       {/* Render header if there are students with 'isActive' value of 'null' (i.e., they are not active and have graduated).
       If there are 0 students with 'isActive' value of 'null', do not show header; as soon as there is at least one student with 'isActive' value of 'null',
       show the header.
+      Use the 'slice' message to show header once; otherwise, it will get mapped and show as many times as there are students.
       The optional chaining (?.) operator below short-circuits if the reference is nullish (null or undefined):
       https://bobbyhadz.com/blog/react-get-first-element-of-array */}
 
