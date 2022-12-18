@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import robot from '../../broken-robot.png';
+import robot from '../../error-page.webp';
 import classes from '../../styles/Error.module.css';
 
 // Robot image: https://icons8.com/icon/JB5lRIhzKC0y/broken-robot

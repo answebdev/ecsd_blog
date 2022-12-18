@@ -8,14 +8,15 @@
 }
 
 .AppHeader {
-  background-color: #232526;
+  /* background-color: #232526; */
+  background-color: #f4f4f4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--textColor);
 }
 
 .ErrorMsg {
@@ -25,7 +26,8 @@
 
 .AppLink {
   /* color: #61dafb; */
-  color: #4fc3f7;
+  /* color: #4fc3f7; */
+  color: var(--secondaryColor);
   text-decoration: none;
   font-family: var(--headerFont);
   letter-spacing: 1px;
