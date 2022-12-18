@@ -60,16 +60,8 @@ const Blog = () => {
         }}
       >
         <div className={classes.HeroContainer}>
-          <h1
-            className={classes.HeroHeader}
-            //style={{ fontsize: '72px', color: '#ffffff' }}
-          >
-            <span
-              className={classes.HeroHeaderSpan}
-              //style={{ padding: '6px 14px', display: 'inline-block' }}
-            >
-              {postData.title}
-            </span>
+          <h1 className={classes.HeroHeader}>
+            <span className={classes.HeroHeaderSpan}>{postData.title}</span>
           </h1>
         </div>
       </div>
