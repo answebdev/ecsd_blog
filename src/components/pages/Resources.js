@@ -7,6 +7,9 @@ import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import Spinner from '../misc/Spinner.js';
+import ScrollUpButton from 'react-scroll-up-button';
+import nothingHereYet from '../../assets/img/no_resources.webp';
 import classes from '../../styles/Resources.module.css';
 
 const Demo = styled('div')(({ theme }) => ({
@@ -15,8 +18,10 @@ const Demo = styled('div')(({ theme }) => ({
 
 const Resources = () => {
   const [allResouces, setAllResources] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     sanityClient
       .fetch(
         `*[_type == "resources"] | order(_createdAt desc){
@@ -26,6 +31,7 @@ const Resources = () => {
         }`
       )
       .then((data) => setAllResources(data))
+      .finally(() => setIsLoading(false))
       .catch(console.error);
   }, []);
 
@@ -35,10 +41,33 @@ const Resources = () => {
         <title>Low Core | Resources</title>
       </Helmet>
       <div className={classes.MainContainer}>
-        <h1 className={classes.Header}>Resources</h1>
+        {/* ORIGINAL HEADER CODE  */}
+        {/* <h1 className={classes.Header}>Resources</h1>
         <div>
           <p className={classes.SubHeader}>Useful Online Resources</p>
-        </div>
+        </div> */}
+
+        {allResouces && allResouces.length < 1 ? (
+          <div className={classes.NothingHereImageDiv}>
+            <img
+              className={classes.NothingHereImage}
+              src={nothingHereYet}
+              alt=''
+            />
+          </div>
+        ) : (
+          !isLoading && (
+            <div className={classes.HeaderContainer}>
+              <h1 className={classes.Header}>Resources</h1>
+              <div>
+                <p className={classes.SubHeader}>Useful Online Resources</p>
+              </div>
+            </div>
+          )
+        )}
+
+        {/* {!allResouces ? <Spinner /> : null} */}
+        {isLoading ? <Spinner /> : null}
 
         <div className={classes.MainDiv}>
           {allResouces &&
@@ -80,6 +109,15 @@ const Resources = () => {
             })}
         </div>
       </div>
+      <ScrollUpButton
+        style={{
+          marginBottom: '40px',
+          marginRight: '-15px',
+          background: `var(--primaryColor)`,
+          borderRadius: '5px',
+        }}
+        ShowAtPosition={500}
+      />
     </div>
   );
 };

@@ -13,9 +13,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconSpeakerLoud from '../misc/IconSpeakerLoud';
 import Spinner from '../misc/Spinner.js';
 import ScrollUpButton from 'react-scroll-up-button';
+import nothingHereYet from '../../assets/img/no_students.webp';
 import classes from '../../styles/Home.module.css';
-
-// import nothing from '../../assets/img/no_students.webp';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -24,9 +23,11 @@ function urlFor(source) {
 
 const Home = () => {
   const [allStudentsData, setAllStudents] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Fetch data and order by 'createdAt' date in ascending order
   useEffect(() => {
+    setIsLoading(true);
     sanityClient
       .fetch(
         `*[_type == "student"] | order(_createdAt asc){
@@ -53,6 +54,7 @@ const Home = () => {
     }`
       )
       .then((data) => setAllStudents(data))
+      .finally(() => setIsLoading(false))
       .catch(console.error);
   }, []);
 
@@ -68,7 +70,8 @@ const Home = () => {
       `}</style>
       </Helmet>
 
-      <div className={classes.HeaderContainer}>
+      {/* ORIGINAL HEADER CODE */}
+      {/* <div className={classes.HeaderContainer}>
         <h1 className={classes.MainHeader}>Class Roster</h1>
         <div>
           <p className={classes.SubHeader}>
@@ -76,9 +79,32 @@ const Home = () => {
             leaving the school.
           </p>
         </div>
-      </div>
+      </div> */}
 
-      {!allStudentsData ? <Spinner /> : null}
+      {allStudentsData && allStudentsData.length < 1 ? (
+        <div className={classes.NothingHereImageDiv}>
+          <img
+            className={classes.NothingHereImage}
+            src={nothingHereYet}
+            alt=''
+          />
+        </div>
+      ) : (
+        !isLoading && (
+          <div className={classes.HeaderContainer}>
+            <h1 className={classes.MainHeader}>Class Roster</h1>
+            <div>
+              <p className={classes.SubHeader}>
+                Current students and former students who remained in this level
+                when leaving the school.
+              </p>
+            </div>
+          </div>
+        )
+      )}
+
+      {/* {!allStudentsData ? <Spinner /> : null} */}
+      {isLoading ? <Spinner /> : null}
 
       <div className={classes.MainContainer}>
         {allStudentsData &&

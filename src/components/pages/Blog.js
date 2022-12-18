@@ -9,13 +9,16 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Spinner from '../misc/Spinner.js';
 import ScrollUpButton from 'react-scroll-up-button';
+import nothingHereYet from '../../assets/img/no_writing.webp';
 import classes from '../../styles/Blog.module.css';
 
 const Blog = () => {
   const [allPostsData, setAllPosts] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Fetch data and order by 'publishedAt' date in descending order
   useEffect(() => {
+    setIsLoading(true);
     sanityClient
       .fetch(
         `*[_type == "post"] | order(publishedAt desc){
@@ -32,6 +35,7 @@ const Blog = () => {
     }`
       )
       .then((data) => setAllPosts(data))
+      .finally(() => setIsLoading(false))
       .catch(console.error);
   }, []);
 
@@ -41,12 +45,33 @@ const Blog = () => {
         <title>Low Core | Blog</title>
       </Helmet>
       <div className={classes.MainContainer}>
-        <h1 className={classes.Header}>Blog</h1>
+        {/* ORIGINAL HEADER CODE */}
+        {/* <h1 className={classes.Header}>Blog</h1>
         <div>
           <p className={classes.SubHeader}>Student Writing Samples</p>
-        </div>
+        </div> */}
 
-        {!allPostsData ? <Spinner /> : null}
+        {allPostsData && allPostsData.length < 1 ? (
+          <div className={classes.NothingHereImageDiv}>
+            <img
+              className={classes.NothingHereImage}
+              src={nothingHereYet}
+              alt=''
+            />
+          </div>
+        ) : (
+          !isLoading && (
+            <div className={classes.HeaderContainer}>
+              <h1 className={classes.Header}>Blog</h1>
+              <div>
+                <p className={classes.SubHeader}>Student Writing Samples</p>
+              </div>
+            </div>
+          )
+        )}
+
+        {/* {!allPostsData ? <Spinner /> : null} */}
+        {isLoading ? <Spinner /> : null}
 
         <div className={classes.MainDiv}>
           {allPostsData &&
