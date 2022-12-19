@@ -29,7 +29,6 @@
 .SubHeader {
   text-align: center;
   line-height: 1.6;
-  /* font-size: 18px; */
   color: var(--textColor);
 }
 
@@ -70,13 +69,9 @@
 .ReadBtn {
   color: var(--secondaryColor) !important;
   border-color: var(--secondaryColor) !important;
-  /* color: #333366;
-  border-color: #333366; */
 }
 
 .ReadBtn:hover {
   color: var(--secondaryColor);
   border-color: var(--secondaryColor);
-  /* color: #333366;
-  border-color: #333366; */
 }

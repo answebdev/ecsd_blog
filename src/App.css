@@ -24,62 +24,11 @@ html {
 /* End Styles for Sticky Footer */
 
 body {
-  /* font-family: 'Roboto', sans-serif;
-  letter-spacing: 0.5px;
-  color: #1a2027; */
   font-family: var(--paragraphFont);
   color: var(--textColor);
-  /* font-family: 'Nunito', sans-serif;
-  letter-spacing: 0.5px;
-  color: #1a2027; */
-  /* color: yellow; */
-
   background-color: #f4f4f4;
-
-  /* LinkedIn Color: */
-  /* background-color: #f3f2ef; */
-  /* Need for footer: */
   position: relative;
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
 }
-
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

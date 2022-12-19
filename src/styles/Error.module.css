@@ -8,7 +8,6 @@
 }
 
 .AppHeader {
-  /* background-color: #232526; */
   background-color: #f4f4f4;
   min-height: 100vh;
   display: flex;
@@ -25,25 +24,8 @@
 }
 
 .AppLink {
-  /* color: #61dafb; */
-  /* color: #4fc3f7; */
   color: var(--secondaryColor);
   text-decoration: none;
   font-family: var(--headerFont);
   letter-spacing: 1px;
 }
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .AppLogo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
